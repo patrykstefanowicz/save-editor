@@ -3,6 +3,8 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 body {
   background: $wtf;
   color: #fff;
@@ -10,4 +12,37 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  
 }
+
+.button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+
+  &__load{
+    background-color: rgb(8, 108, 189);
+    color: white;
+    margin-right: 20px;
+    width: 60px;
+    
+  }
+  &__save{
+    background-color: rgb(10, 163, 10);
+    color: white;
+    width: 60px;
+  }
+}
+
+
+.heading{
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.textarea{
+  width: 400px;
+  height: 300px;
+  border-radius: 15px;
+}
+
