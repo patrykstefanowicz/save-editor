@@ -9,24 +9,29 @@ import '../scss/main.scss';
 console.log('Save - editor 🚀')
 
 
-const editor = localStorage.getItem('editor');
-let result = '';
 
-if (editor) {
-    result = editor;
+
+const textarea = document.querySelector('.textarea--js');
+const load = document.querySelector('.load--js');
+const save = document.querySelector('.save--js');
+
+const currentValue = localStorage.getItem('entry');
+if (currentValue) {
+    document.querySelector('.info--js').innerHTML = '?';
 }
-const entryInput = document.querySelector('.textarea--js');
-entryInput.value = result;
 
-const buttonSave = document.querySelector('.button__save--js');
-buttonSave.addEventListener ('click' , () => {
-    localStorage.setItem ('EditorSave' , entryInput.value);
+save.addEventListener('click' , (e)=>{
+    e.preventDefault();
+    localStorage.setItem('entry', textarea.value);
+    if (textarea.value) {
+        document.querySelector('.info--js').innerHTML = '?';
+        } else {
+            document.querySelector('.info--js').innerHTML = '';
+        }
 })
 
-
-
-
-const buttonLoad = document.querySelector('.button__load--js');
-buttonSave.addEventListener ('click' , () => {
-    localStorage.setItem ('EditorLoad' , entryInput.value);
+load.addEventListener('click' , (e)=>{
+    e.preventDefault();
+    textarea.value = localStorage.getItem('entry');
+    
 })

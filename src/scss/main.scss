@@ -3,7 +3,17 @@
 @import "_variables";
 @import "modules/hello.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   background: $wtf;
@@ -12,37 +22,47 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  
+  font-family: Open Sans;
 }
 
-.button{
+main {
+  width: 100%;
+  max-width: 736px;
+  padding: 16px;
+  &__header {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}
+
+.button {
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
 
-  &__load{
-    background-color: rgb(8, 108, 189);
+  &__load {
     color: white;
     margin-right: 20px;
-    width: 60px;
-    
+    width: 70px;
+    background: #2d9cdb;
+    border: 1px solid #121232;
+    border-radius: 4px;
   }
-  &__save{
-    background-color: rgb(10, 163, 10);
+  &__save {
     color: white;
-    width: 60px;
+    width: 70px;
+    background: #27ae60;
+    border: 1px solid #121232;
+    border-radius: 4px;
   }
 }
-
-
-.heading{
-  font-weight: 400;
-  margin-bottom: 5px;
+.form{
+&__textarea {
+  width: 100%;
+  min-height: 300px;
+  background: #ffffff;
+  border: 1px solid #a1a4b1;
+  border-radius: 4px;
+  padding: 16px;
 }
-
-.textarea{
-  width: 400px;
-  height: 300px;
-  border-radius: 15px;
 }
-
